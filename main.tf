@@ -1,7 +1,7 @@
 resource "aws_cloudfront_distribution" "website" {
   enabled     = true
   price_class = "PriceClass_100"
-  aliases     = [var.website-domain-main]
+  aliases     = ["${var.prefix_subdomain}.${var.website-domain-main}"]
 
   origin {
     origin_id   = "origin-bucket-${aws_s3_bucket.website.id}"

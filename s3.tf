@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "website" {
-  bucket = "${var.website-domain-main}-source"
+  bucket = "${var.prefix_subdomain}.${var.website-domain-main}"
   acl    = "public-read"
 
   force_destroy = true
